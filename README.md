@@ -1,4 +1,5 @@
-# ticker-app
+# VehicleTicker
+Vehicle Counting Ticker
 
 ## Project setup
 ```

@@ -69,7 +69,7 @@
     },
     methods: {
       listen() {
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keyup', (e) => {
           console.log(e.code);
           if(this.isFocused) {
             return;
@@ -127,6 +127,7 @@
           this.cars = 0;
           this.buses = 0;
           this.trucks = 0;
+          this.instance_name = '';
         }
       },
       deleteInstance(index) {
@@ -148,7 +149,7 @@
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr max-content;
     align-items: center;
     justify-items: center;
     margin-top: 32px;
@@ -188,14 +189,17 @@
     gap: 30px;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, max-content);
+    margin: 32px 0;
+  }
+  .global-actions > * {
+    min-width: 10vmax;
   }
   .reset-button.all, .save-instance {
     color: hsla(268, 90%, 46%, 0.75);
     background-color: transparent;
     border-radius: 12px;
     box-shadow: 0 0 2px 0 hsla(268, 90%, 46%, 0.75), 0 2px 8px -2px rgba(0,0,0,0.15);
-    width: 200px;
     padding: 12px;
     margin-top: 0;
   }
@@ -219,6 +223,7 @@
     justify-content: center;
     margin: 0 auto;
     padding: 8px 0;
+    box-sizing: border-box;
   }
   .name {
     font-weight: 700;
@@ -258,5 +263,63 @@
     cursor: pointer;
     background-color: red;
     color: #fff;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .tickers {
+      width: 90%;
+    }
+    .global-actions {
+      grid-template-columns: repeat(2, max-content);
+    }
+    .reset-button.all {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    .instances {
+      width: 100vw;
+      margin: 0 auto;
+    }
+    .instance {
+      padding: 8px 20px;
+    }
+  }
+   @media only screen and (max-width: 540px) {
+    .tickers {
+      grid-template-columns: 1fr 1fr;
+    }
+    .ticker {
+      margin-bottom: 24px;
+    }
+    .global-actions {
+      gap: 24px;
+    }
+    .instances {
+      margin-bottom: 20px;
+    }
+    .instance {
+      grid-template-columns: 1fr 50px;
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+    }
+    .instance > * {
+      margin-bottom: 4px;
+    }
+    .date {
+      grid-row-start: 2;
+    }
+    .data {
+      grid-row-start: 3;
+    }
+    .remove-action {
+      grid-row-start: 1;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      justify-self: self-start;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+    }
   }
 </style>

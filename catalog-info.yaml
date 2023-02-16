@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: VehicleTicker
+  annotations:
+    github.com/project-slug: jlks-xii/VehicleTicker
+spec:
+  type: other
+  lifecycle: unknown
+  owner: jlks-xii

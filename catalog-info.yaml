@@ -5,6 +5,6 @@ metadata:
   annotations:
     github.com/project-slug: jlks-xii/VehicleTicker
 spec:
-  type: other
-  lifecycle: unknown
+  type: website
+  lifecycle: experimental
   owner: jlks-xii

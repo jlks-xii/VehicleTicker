@@ -2,6 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: VehicleTicker
+  links:
+    - url: https://affectionate-ritchie-b23de9.netlify.app
+      title: Vehicle Ticker App
+      icon: github
   annotations:
     github.com/project-slug: jlks-xii/VehicleTicker
 spec:

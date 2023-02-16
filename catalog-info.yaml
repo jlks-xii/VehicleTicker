@@ -9,6 +9,6 @@ metadata:
   annotations:
     github.com/project-slug: jlks-xii/VehicleTicker
 spec:
-  type: service
+  type: website
   lifecycle: experimental
   owner: jlks-xii
